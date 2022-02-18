@@ -1,0 +1,384 @@
+.header__text{
+    position: absolute;
+    top:15%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    margin:1rem 0;
+
+    @include respond(phone-small){
+        top:8%;
+        width:100%;
+    }
+
+    &--primary{
+        font-size: 3rem;
+        font-weight: 800;
+        padding:1rem 0;
+        word-spacing: .2rem;
+
+        @include respond(phone){
+            font-size: 2rem;
+            text-align: center;
+        }
+        
+    }
+
+    &--secondary{
+        font-size: 1.5rem;
+        color:$color-secondary;
+        text-align: center;
+
+        @include respond(phone-small){
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+}
+
+.complete-box{
+    margin:2rem 0rem;
+    background-color: $color-pricing-box-bg;
+    display: inline-block;
+    height: 38rem;
+    width: 50rem;
+    box-shadow: 2rem 2rem 6rem rgba(0,0,0, .2);
+    border-radius: .5rem;
+    position: absolute;
+    top:55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @include respond(phone){
+        top:50%;
+    }
+
+    @include respond(phone-small){
+        height: 50rem;
+        top:55%;
+        width: 90%;
+    }
+
+
+    // Manage pricing through slider and toggle
+    .upper-box{
+        padding: 2rem 4rem;
+
+        .pricing-box{
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            grid-gap:2rem;
+
+            
+            @include respond(phone-small){
+                grid-template-rows: repeat(3, 1fr);
+                grid-template-columns: repeat(1, 1fr);
+                text-align: center;
+                grid-gap:0rem;
+            }
+
+
+    
+            .page-views{
+                font-size: 1.3rem;
+                color:$color-secondary;
+                font-weight: 800;
+                text-transform: uppercase;
+            }
+    
+            .price-per-month{
+                display: flex;
+                align-items: center;
+                
+
+                @include respond(phone-small){
+                    justify-content: center;
+                }
+
+
+                &--value{
+                    font-size: 3rem;
+                    font-weight: 800;
+                    color:$color-primary;
+                    margin-right: .3rem;
+                }
+
+                &--text{
+                    color:$color-secondary;
+                }
+            }
+
+                    // Slider
+        .slidecontainer{
+            // margin-top:3rem;
+            grid-row: 2/ 3;
+            grid-column: 1/3;
+
+            @include respond(phone-small){
+                grid-row: 2/3;
+                grid-column: 1/2;
+                margin-top: 1rem;
+            }
+
+            width: 100%;
+            margin-bottom: 2rem;
+            height:25px;
+            outline: none;
+            opacity: .7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+            position: relative;
+
+            .slider{
+                -webkit-appearance: none;
+                width: 100%;
+                height:.7rem;
+                outline: none;
+                border-radius: .7rem;
+                background-color: $color-slider;
+
+                &:hover{
+                    opacity: 1;
+                }
+                
+                &::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    height: 3.6rem;
+                    width:3.6rem;
+                    cursor: pointer;
+                    z-index: 3;
+                    position: relative;
+                    // background-color: orangered;
+                }
+
+            }
+
+            .selector{
+                height:1.4rem;
+                width:1.8rem;
+                position: absolute;
+                left:60%;   
+                transform: translateX(-100%);
+                z-index: 2; 
+                
+
+                .selectBtn{
+                    height: 3.6rem;
+                    width:3.6rem;
+                    background-image: url('../images/icon-slider.svg');
+                    background-size: 2rem 2rem;
+                    box-shadow: 2px 2px 6px rgba(0,0,0,.2) ;
+                    filter:drop-shadow(2px 4px 8px $color-slider-bg);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    border-radius: 50%;
+                    position: absolute;
+                    bottom: .5rem;
+                    background-color: $color-slider-bg;
+                }
+
+                // .selectValue{
+                //     width: 4.8rem;
+                //     height: 4.4rem;
+                //     position: absolute;
+                //     top:-5rem;
+                //     background-color: #ffd200;
+                //     border-radius: 4px;
+                //     text-align: center;
+                //     line-height: 45px;
+                //     font-size: bold;
+                // }
+                
+            }
+
+            .progressBar{
+                width: 60%;
+                height: 7px;
+                background-color: $color-slider-bg;
+                border-radius: 3px;
+                position: absolute;
+                top:1rem;
+                left: 0;
+            }
+
+            }
+        }
+
+
+
+        // Toggle between Monthly Billing and Yearly Billing
+        .billing-type{
+            display: flex;
+            justify-content:end;
+            align-content: center;
+            align-items: center;
+            margin: 4rem 0 2rem 0;
+
+            @include respond(phone-small){
+                margin: 3rem 0 0 0;
+            }
+            
+            &__toggle{
+
+                margin: 0 1.5rem;
+                /* toggle in label designing */
+                .toggle {
+                    position : relative ;
+                    display : inline-block;
+                    width : 6rem;
+                    height : 3rem;
+                    background-color: $color-main-bg;
+                    border-radius: 3rem;
+                    border: 2px solid gray;
+                }
+
+                // After Slide Changes
+                .toggle:after{
+                    content : '';
+                    position: absolute;
+                    width: 2.3rem;
+                    height:2.3rem;
+                    border-radius: 50%;
+                    background-color: gray;
+                    top:-3px;
+                    left:0px;
+                    transition: all .5s;
+                    margin:.4rem 0 .4rem .2rem;
+                }
+
+                /* Checkbox checked effect */
+                .checkbox:checked + .toggle::after{
+                    left:2.7rem;
+                }
+
+                /* Checkbox checked toggle label bg color */
+                .checkbox:checked + .toggle{
+                    background-color: $color-slider-bg;
+                    transition: all .5s;
+                }
+
+                // Checkbox Vanished
+                .checkbox{
+                    display: none;
+                }
+            
+            }
+
+
+            &__monthlyText{
+                font-size: 1.4rem;
+                color:$color-secondary;
+            }
+
+            &__yearlyText{
+                font-size: 1.4rem;
+                color:$color-secondary;
+            }
+
+            &__discount{
+                font-size: 1.3rem;
+                color:$color-discount-text;
+                background-color: $color-discount-bg;
+                margin-left: 1rem;
+                padding:.5rem .5rem ;
+            }
+        }
+
+
+    }
+
+    // Border
+    .border-down{
+        border-bottom: 1px solid $color-empty-slide-bar;
+    }
+
+    // Start trial button
+    .down-box{
+        padding: 2rem 4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include respond(phone-small){
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        &__left{
+            font-size:1.3rem;
+            color:$color-secondary;
+
+            @include respond(phone-small){
+                margin-bottom: 2rem;
+            }
+            
+
+            .features{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                
+                @include respond(phone-small){
+                    margin-bottom: .3rem;
+                    justify-content: center;
+                }
+
+                .checkmark{
+                    margin: .4rem 1rem;
+
+                    .check-icon{
+                        height: 1rem;
+                        width: auto;
+                    }
+                }
+
+                &-text{
+
+                }
+            }
+        }
+
+        &__right{
+            // Start Trial Button
+
+            .btn{
+                
+                &,
+                &:link,
+                &:visited{
+                    border: none;
+                    cursor: pointer;
+                    text-transform: capitalize;
+                    text-decoration: none;
+                    background-color: $color-primary;
+                    color:$color-cta-text;
+                    padding: 1rem 4rem;
+                    border-radius: 10rem;
+                    transition: all .2s;
+                }
+
+                &:hover{
+                    color:#fff;
+                    transform: translateY(-0.3rem);
+                    box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

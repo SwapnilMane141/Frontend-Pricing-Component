@@ -1,0 +1,66 @@
+// Color Variables
+
+$color-primary:hsl(227, 35%, 25%);
+$color-secondary:hsl(225, 20%, 60%);
+
+
+$color-slider: hsl(174, 77%, 80%);
+$color-slider-bg : hsl(174, 86%, 45%);
+$color-discount-bg: hsl(14, 92%, 95%);
+$color-discount-text:hsl(15, 100%, 70%);
+$color-cta-text:hsl(226, 100%, 87%);
+
+$color-pricing-box-bg: hsl(0, 0%, 100%);
+$color-main-bg: hsl(219, 32%, 82%);
+$color-empty-slide-bar:hsl(224, 65%, 95%);
+$color-toggle-bg:hsl(223, 50%, 87%);
+
+$bp-largest:75em;
+$bp-large:68.75em;
+$bp-medium: 56.25em;
+$bp-small: 37.5em;
+$bp-smallest: 31.25em;
+
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:inherit;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; // 10px/ 16px = 62.5%
+    scroll-behavior: smooth;
+
+    @include respond(tab-land){ // width < 1200 ?
+        font-size: 56.25% ;  //1rem = 9px , 9/16  
+    }
+    
+    
+    @include respond(tab-port){ // width < 900 ?
+        font-size: 65%;    //1rem = 8px ,8/16
+    }
+
+    // @include respond(phone){ // width < 750 ?
+    //     font-size: 60%;    
+    // }
+    
+    // @include respond(big-desktop){ // min-width = 1800 ?
+    //     font-size: 75%; //1rem = 12px, 12/16    
+    // }
+}
+
+
+body{
+    font-family: 'Manrope',sans-serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color:$color-primary;
+    background-color: $color-main-bg;
+}   
+
+
+

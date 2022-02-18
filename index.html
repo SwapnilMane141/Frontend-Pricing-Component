@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/icon" href="images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+    <script defer src="js/script.js"></script>
+    <title>Interactive Pricing Component</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__text">
+            <div class="header__text--primary">
+                Simple, traffic-based pricing
+            </div>
+            <div class="header__text--secondary">
+                Sign-up for our 30-day trial. No credit card required.
+            </div>
+        </div>
+        <div class="complete-box">
+            <div class="upper-box">
+                <div class="pricing-box">
+                    <div class="page-views">
+                        100k PageViews
+                    </div>
+                    <div class="price-per-month">
+                        <span class="price-per-month--value">$16.00 </span>
+                        <span class="price-per-month--text"> /month</span>
+                    </div>
+                    <div class="slidecontainer">
+                        <input class="slider" step="20" type="range" min='0' max = '100' value="60">
+                        <div class="selector">
+                            <div class="selectBtn">
+                            <div class="selectValue"></div>
+                            </div>
+                        </div>
+                        <div class="progressBar"></div>
+                    </div>
+                </div>
+                
+                <div class="billing-type">
+                    <div class="billing-type__monthlyText">
+                        Monthly Billing
+                    </div>
+                    <div class="billing-type__toggle">
+                        <!-- Build toggle button -->
+                        <input type="checkbox" class="checkbox" id="switch">
+                        <label for="switch" class="toggle">
+                            <!-- <p>OFF ON</p> -->
+                        </label>
+                    </div>
+                    <div class="billing-type__yearlyText">
+                        Yearly Billing
+                    </div>
+                    <div class="billing-type__discount">
+                        25% discount
+                    </div>
+                </div>
+                
+            </div>
+            <div class="border-down"></div>
+            <div class="down-box">
+                <div class="down-box__left">
+                    <div class="features">
+                        <div class="checkmark">
+                            <img src="images/icon-check.svg" class="check-icon" alt="Check Icon">
+                        </div>
+                        <div class="features-text">
+                            Unlimited Websites
+                        </div>
+                    </div>
+                    <div class="features">
+                        <div class="checkmark">
+                            <img src="images/icon-check.svg" class="check-icon" alt="Check Icon">
+                        </div>
+                        <div class="features-text">
+                            100% data ownership
+                        </div>
+                    </div>
+                    <div class="features">
+                        <div class="checkmark">
+                            <img src="images/icon-check.svg" class="check-icon" alt="Check Icon">
+                        </div>
+                        <div class="features-text">
+                            Email reports
+                        </div>
+                    </div>
+                </div>
+
+                <div class="down-box__right">
+                    <button class="btn btn--blue">Start my trial</button>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
